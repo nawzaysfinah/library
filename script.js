@@ -6,7 +6,6 @@ function Book(title, author, pages, read) {
   this.pages = pages;
   this.read = read;
 }
-function addBookToLibrary() {}
 
 const book1 = new Book(
   "The One Straw Revolution",
@@ -17,4 +16,10 @@ const book1 = new Book(
 
 const book2 = new Book("A Whole New Mind", "Daniel H. Pink", "304", true);
 
-console.log(book2);
+function addBookToLibrary() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}

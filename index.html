@@ -21,7 +21,44 @@
       <button class="logIn">Log in</button>
     </div>
     <div class="main">
-      <button class="addBook">+ Add book</button>
+      <!-- the "+ add book" button -->
+      <button class="addBook" onclick="addBookToLibrary()">+ Add book</button>
+
+      <!-- The Form -->
+      <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h3 class="addNewBook-title">Add new book</h3>
+
+          <input type="text" placeholder="Title" name="title" required />
+
+          <input type="text" placeholder="Author" name="author" required />
+
+          <input type="text" placeholder="No. of pages" name="pages" required />
+
+          <div class="readBook">
+            <label for="read">Have you read it?</label>
+            <input
+              type="checkbox"
+              placeholder="No. of pages"
+              name="read"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">
+            Close
+          </button>
+        </form>
+      </div>
     </div>
+    <!-- <div class="footer">
+      <p>copyright 2023 nawzayfinah</p>
+      <img
+        src="./img/Octicons-mark-github.svg"
+        alt="github logo"
+        width="24px"
+      />
+    </div> -->
   </body>
 </html>

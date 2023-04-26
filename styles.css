@@ -10,7 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  border-bottom: 5 px solid yellow;
+  border-bottom: 5 px solid #fefce8;
 }
 
 .logIn {
@@ -20,6 +20,11 @@
   border: 1px solid#7dd3fc;
   background: #7dd3fc;
   color: white;
+}
+
+.logIn:hover {
+  background-color: #d8b4fe;
+  border: 2px solid y;
 }
 
 .main {
@@ -43,4 +48,97 @@
 
 .addBook:hover {
   background-color: #fefce8;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecfeff;
+}
+
+.form-popup {
+  display: flex;
+  position: relative;
+  bottom: 0;
+  border: 1px solid #f1f1f1;
+  z-index: 9;
+  background-color: #f1f1f1;
+  border-radius: 20px;
+}
+
+.form-container {
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+/* Full-width input fields */
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: 80%;
+  padding: 15px;
+  margin: 5px 0 15px 0;
+  border: none;
+  background: #f1f1f1;
+  border: none;
+  border-radius: 10px;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04aa6d;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 80%;
+  height: 50px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  font-size: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover,
+.open-button:hover {
+  opacity: 1;
+}
+
+.addNewBook-title {
+  margin: 20px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.readBook {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+.text {
+  border-radius: 10px;
 }
