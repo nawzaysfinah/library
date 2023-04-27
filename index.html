@@ -10,14 +10,51 @@
   </head>
   <body>
     <div class="container">
-      <div class="form-heading">
-        <h1>Add New Book to Library</h1>
+      <div class="navbar">
+        <h1>Library</h1>
+        <button class="logIn">Log in</button>
       </div>
-      <div class="books-heading">
-        <h1>Current Books in Library</h1>
+      <div class="main">
+        <button class="addBook" onclick="clickHandler()">+ Add book</button>
+        <div class="form-container" style="display: none" id="addBookForm">
+          <form action="action_page.php">
+            <h3>Add Book!</h3>
+            <input
+              type="text"
+              id="title"
+              name="Title"
+              placeholder="Book title..."
+            />
+
+            <input
+              type="text"
+              id="author"
+              name="Author"
+              placeholder="Author's name..."
+            />
+
+            <input
+              type="text"
+              id="pages"
+              name="Pages"
+              placeholder="No. of pages..."
+            /><br />
+
+            <label for="readStatus">Have you read?</label>
+            <input
+              type="checkbox"
+              id="readStatus"
+              name="read"
+              value="readBook"
+            /><br /><br />
+
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
       </div>
+
       <div class="form">
-        <p>Test Form Info</p>
+        <!-- <p>Test Form Info</p> -->
       </div>
       <div class="books"></div>
     </div>
