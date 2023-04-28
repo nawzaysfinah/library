@@ -7,9 +7,36 @@ function Book(Title, Author, Pages, Read) {
   this.Author = Author;
   this.Pages = Pages;
   this.Read = Read;
-  this.info = Title + ", " + Author + ", " + Pages + ", " + Read;
+  this.info = Title + "<br>" + Author + "<br>" + Pages + "<br> " + Read;
 }
 
+function render() {
+  let libraryEl = document.querySelector("#books");
+  libraryEl.innerHTML = "";
+  for (let i = 0; i < myLibrary.length; i++) {
+    let book = myLibrary[i];
+    let bookEl = document.createElement("div");
+    bookEl.setAttribute("class", "book-card");
+    bookEl.innerHTML = `
+    <div class="card-header">
+      <h3 class="title">${book.Title}</h3>
+      <h5 class="author">${book.Author}</h5>
+    </div><br>
+    <div class="card-body">
+      <p>${book.Pages}</p>
+      <p class="read-status">${book.Read ? "Read" : "Not Read Yet"}</p><br>
+      <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
+      <input
+              type="checkbox"
+              id="readStatus"
+              name="read"
+              value="readStatus"
+    </div>`;
+    libraryEl.appendChild(bookEl);
+  }
+}
+
+function removeBook() {}
 // function for adding a new book to the array/library
 function addBookToLibrary(Title, Author, Pages, Read) {
   let title = document.querySelector("#title").value;
@@ -24,19 +51,10 @@ function addBookToLibrary(Title, Author, Pages, Read) {
   Read = read;
 
   let newBook = new Book(Title, Author, Pages, Read);
-  console.log(
-    "Title: " +
-      title +
-      ", Author: " +
-      author +
-      ", Pages: " +
-      pages +
-      ", Read: " +
-      read
-  );
-  console.log(newBook);
+
   myLibrary.push(newBook);
-  // console.log(myLibrary);
+  console.log(myLibrary);
+  render();
 }
 
 // const theHobbit = new Book("The Hobbit", "J.R.R Tolkein", "372", false);
@@ -92,4 +110,9 @@ function clickHandler() {
 function submitBook() {
   event.preventDefault();
   addBookToLibrary();
+  // reset input to null after submitting a book
+  document.querySelector("#title").value = null;
+  document.querySelector("#author").value = null;
+  document.querySelector("#pages").value = null;
+  document.querySelector("#readStatus").checked = false;
 }
