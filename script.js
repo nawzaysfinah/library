@@ -36,7 +36,11 @@ function render() {
   }
 }
 
-function removeBook() {}
+// function to removeBook when not wanted
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  render();
+}
 // function for adding a new book to the array/library
 function addBookToLibrary(Title, Author, Pages, Read) {
   let title = document.querySelector("#title").value;
