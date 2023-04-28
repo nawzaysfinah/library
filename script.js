@@ -21,19 +21,28 @@ function render() {
     <div class="card-header">
       <h3 class="title">${book.Title}</h3>
       <h5 class="author">${book.Author}</h5>
-    </div><br>
+    </div>
     <div class="card-body">
-      <p>${book.Pages}</p>
-      <p class="read-status">${book.Read ? "Read" : "Not Read Yet"}</p><br>
-      <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
-      <input
-              type="checkbox"
-              id="readStatus"
-              name="read"
-              value="readStatus"
+      <p>${book.Pages} Pages</p><br>
+      <div class="card-btn">
+        <button class="toggle-read-btn" onclick="toggleRead(${i})"><p class="read-status">${
+      book.Read ? "Read ✅" : "Not Read ❌"
+    }</p></button>
+          <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
+      </div>
     </div>`;
     libraryEl.appendChild(bookEl);
   }
+}
+
+// function read function
+Book.prototype.toggleRead = function () {
+  this.Read = !this.Read;
+};
+
+function toggleRead(index) {
+  myLibrary[index].toggleRead();
+  render();
 }
 
 // function to removeBook when not wanted
