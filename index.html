@@ -17,7 +17,7 @@
       <div class="main">
         <button class="addBook" onclick="clickHandler()">+ Add book</button>
         <div class="form-container" style="display: none" id="addBookForm">
-          <form action="action_page.php">
+          <form action="">
             <h3>Add Book!</h3>
             <input
               type="text"
@@ -45,10 +45,10 @@
               type="checkbox"
               id="readStatus"
               name="read"
-              value="readBook"
+              value="readStatus"
             /><br /><br />
 
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" onclick="submitBook()" />
           </form>
         </div>
       </div>
